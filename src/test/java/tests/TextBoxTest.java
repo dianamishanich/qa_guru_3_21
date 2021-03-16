@@ -13,7 +13,7 @@ import static io.qameta.allure.Allure.step;
 
     @Feature("Form fill tests")
     @Story("Text box")
-    public class TextBoxTests extends TestBase {
+    public class TextBoxTest extends TestBase {
 
         @Test
         @DisplayName("Successful fill text box form")
