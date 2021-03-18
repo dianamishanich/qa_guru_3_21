@@ -15,7 +15,6 @@ import static io.qameta.allure.Allure.step;
     @Story("Text box")
     public class TextBoxTest extends TestBase {
         String userName = "Di",
-                lastName = "M",
                 userEmail = "leprekon@ya.ru",
                 currentAddress = "Dublin",
                 permanentAddress = "St. Patrick Street, 17";

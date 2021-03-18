@@ -33,17 +33,17 @@ public class RegistrationFormTest extends TestBase {
     Faker faker = new Faker();
     FakeValuesService fakeValuesService = new FakeValuesService(
             new Locale("en-GB"), new RandomService());
+    String firstName = faker.name().firstName();
+    String lastName = faker.name().lastName();
+    String userEmail = fakeValuesService.bothify("????##@ya.ru");
+    String userNumber = fakeValuesService.regexify("[0-9]{10}");
+    String currentAddress = faker.address().fullAddress();
 
-    String firstName = "Di",
-            lastName = "M",
-            userEmail = "leprekon@ya.ru",
-            userNumber = "8006666666",
-            gender = "Female",
+    String  gender = "Female",
             dayOfBirth = "22",
             monthOfBirth = "June",
             yearOfBirth = "1993",
             picture = "always.png",
-            currentAddress = "St. Patrick Street, 17",
             state = "Haryana",
             city = "Karnal";
     String[] subjects = { "Economics", "Social Studies" };
