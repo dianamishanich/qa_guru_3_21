@@ -1,12 +1,10 @@
 package tests;
 
-import com.codeborne.selenide.Configuration;
 import com.github.javafaker.Faker;
 import com.github.javafaker.service.FakeValuesService;
 import com.github.javafaker.service.RandomService;
 import io.qameta.allure.Feature;
 import io.qameta.allure.Story;
-import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
@@ -41,11 +39,6 @@ public class RegistrationFormTest extends TestBase {
             city = "Karnal";
     String[] subjects = { "Economics", "Social Studies" };
     String[] hobbies = { "Sports", "Reading", "Music" };
-
-    @BeforeAll
-    static void setup() {
-        Configuration.startMaximized = true;
-    }
 
     @Test
     @DisplayName("Successful fill registration form")
