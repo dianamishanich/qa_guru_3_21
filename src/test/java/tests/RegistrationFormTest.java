@@ -3,6 +3,7 @@ package tests;
 import com.github.javafaker.Faker;
 import com.github.javafaker.service.FakeValuesService;
 import com.github.javafaker.service.RandomService;
+import io.qameta.allure.AllureId;
 import io.qameta.allure.Feature;
 import io.qameta.allure.Story;
 import org.junit.jupiter.api.DisplayName;
@@ -140,6 +141,26 @@ public class RegistrationFormTest extends TestBase {
 
         step("Verify wrong form submit", () -> {
             $("#userNumber").shouldHave(cssValue("border-color", "rgb(220, 53, 69)"));
+        });
+
+    }
+
+    @Test
+    @AllureId("2198")
+    @DisplayName("Unsuccessful fill registration form without Last Name")
+    void UnsuccessfulFillFormTestWithoutLastName() {
+        step("Open students registration form", () -> {
+            open("https://demoqa.com/automation-practice-form");
+            $(".practice-form-wrapper").shouldHave(text("Student Registration Form"));
+        });
+
+        step("Fill students registration form without Last Name", () -> {
+
+            $("#submit").click();
+        });
+
+        step("Verify wrong form submit", () -> {
+            $("#lastName").shouldHave(cssValue("border-color", "rgb(220, 53, 69)"));
         });
 
     }
